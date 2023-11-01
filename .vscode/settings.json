@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "haluart.h": "c"
+        "haluart.h": "c",
+        "stdbool.h": "c",
+        "haltimer.h": "c"
     }
 }
