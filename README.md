@@ -1,6 +1,8 @@
+## 1. Reference
+
 github.com/navilera/Navilos
 
-## Ch 3
+## 2. CMD
 
 - compile Entry.S
 ```bash
@@ -55,6 +57,3 @@ make gdb
 (gdb) s
 ...
 ```
-
-## CH4
-
