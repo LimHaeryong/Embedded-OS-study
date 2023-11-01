@@ -130,8 +130,7 @@ void User_task0(void)
                             }
                             else if (false == Kernel_send_msg(KernelMsgQ_Task1, cmdBuf, cmdBufIdx))
                             {
-                                uint8_t rollback;
-                                Kernel_recv_msg(KernelMsgQ_Task1, &rollback, 1);
+                                Kernel_msgQ_rollback(KernelMsgQ_Task1);
                                 Kernel_yield();
                             }
                             else
