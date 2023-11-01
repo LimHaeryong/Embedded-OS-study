@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/lib/**",
-                "${workspaceFolder}/include/**"
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/kernel/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/arm-none-eabi-gcc",
