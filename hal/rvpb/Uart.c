@@ -64,8 +64,19 @@ uint8_t Hal_uart_get_char(void)
 static void interrupt_handler(void)
 {
     uint8_t ch = Hal_uart_get_char();
-    Hal_uart_put_char(ch);
-
-    Kernel_send_msg(KernelMsgQ_Task0, &ch, 1);
-    Kernel_send_events(KernelEventFlag_UartIn);
+    
+    switch(ch)
+    {
+        case 'U':
+            Kernel_send_events(KernelEventFlag_Unlock);
+            break;
+        case 'X':
+            Kernel_send_events(KernelEventFlag_CmdOut);
+            break;
+        default:
+            Hal_uart_put_char(ch);
+            Kernel_send_msg(KernelMsgQ_Task0, &ch, 1);
+            Kernel_send_events(KernelEventFlag_UartIn);
+            break;
+    }
 }
